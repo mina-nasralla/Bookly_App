@@ -16,7 +16,7 @@ class Bookly extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Bookly App',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Kprimarycolor,
         textTheme: GoogleFonts.montserratTextTheme(
