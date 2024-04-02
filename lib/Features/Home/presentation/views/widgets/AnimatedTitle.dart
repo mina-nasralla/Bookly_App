@@ -21,7 +21,7 @@ class _AnimatedTitleState extends State<AnimatedTitle> with SingleTickerProvider
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 1),
     );
     _animationLeft = Tween<Offset>(
       begin: const Offset(0.0, 0.0),

@@ -1,5 +1,6 @@
 import 'package:booklyapp/Features/Home/presentation/views/widgets/AnimatedTitle.dart';
 import 'package:booklyapp/Features/Home/presentation/views/widgets/home_view_body.dart';
+import 'package:booklyapp/constant.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -7,8 +8,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: const HomeViewBody(),
+    return const Scaffold(
+      body: HomeViewBody(),
     );
   }
 }
