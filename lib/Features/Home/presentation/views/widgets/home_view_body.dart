@@ -1,6 +1,7 @@
 import 'package:booklyapp/Core/utilites/App_Styles/style.dart';
 import 'package:booklyapp/Features/Home/presentation/views/widgets/BestSellersListView.dart';
 import 'package:booklyapp/Features/Home/presentation/views/widgets/Featured_Books_List.dart';
+import 'package:booklyapp/Features/Search/presentation/Search_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
@@ -21,7 +22,8 @@ class HomeViewBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 25,horizontal: 8),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 25, horizontal: 8),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -31,7 +33,12 @@ class HomeViewBody extends StatelessWidget {
                           ),
                           // Animated logo
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const SearchScreen()));
+                              },
                               icon: const Icon(
                                 Icons.search,
                                 size: 35,
@@ -57,7 +64,7 @@ class HomeViewBody extends StatelessWidget {
                 ),
               ),
               const SliverFillRemaining(
-                child:Padding(
+                child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: BestSellersListView(),
                 ),
@@ -65,7 +72,7 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
             child: GlassContainer(
               borderRadius: BorderRadius.circular(40),
               border: BorderSide.strokeAlignCenter,
@@ -74,18 +81,38 @@ class HomeViewBody extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(onPressed: (){}, icon: const Icon(CupertinoIcons.book_solid,size: 25,)),
-                    IconButton(onPressed: (){}, icon: const Icon(CupertinoIcons.bookmark_fill,size: 25,)),
-                    IconButton(onPressed: (){}, icon: const Icon(CupertinoIcons.music_albums_fill,size: 25,)),
-                    GlassContainer(
-                      width: 50,
-                      height: 60,
-                      borderRadius: BorderRadius.circular(35),
-                      child: Image(image: AssetImage('assets/images/1.jpg'),fit: BoxFit.cover,),
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          CupertinoIcons.book_solid,
+                          size: 30,
+                        )),
+                    const SizedBox(width: 40,),
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          CupertinoIcons.bookmark_fill,
+                          size: 30,
+                        )),
+                    const SizedBox(width: 40,),
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          CupertinoIcons.music_albums_fill,
+                          size: 30,
+                        )),
+                    const SizedBox(width: 40,),
+                    Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey[200],
+                      ), child: const CircleAvatar(
+                        backgroundImage:
+                             AssetImage('assets/images/1.jpg'),
+                      ),
                     )
-               ],
+                  ],
                 ),
               ),
             ),
@@ -95,4 +122,3 @@ class HomeViewBody extends StatelessWidget {
     );
   }
 }
-

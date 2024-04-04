@@ -25,26 +25,26 @@ class Featuredbooksitem extends StatelessWidget {
                   ),
                   fit: BoxFit.fill,
                 ),
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(14),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: GlassContainer(
-              blur: 15,
-              border: BorderSide.strokeAlignCenter,
-              borderRadius: BorderRadius.circular(35),
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  CupertinoIcons.play_arrow_solid,
-                  size: 18,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          )
+          // Padding(
+          //   padding: const EdgeInsets.all(10),
+          //   child: GlassContainer(
+          //     blur: 15,
+          //     border: BorderSide.strokeAlignCenter,
+          //     borderRadius: BorderRadius.circular(35),
+          //     child: IconButton(
+          //       onPressed: () {},
+          //       icon: const Icon(
+          //         CupertinoIcons.play_arrow_solid,
+          //         size: 18,
+          //         color: Colors.white,
+          //       ),
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );
