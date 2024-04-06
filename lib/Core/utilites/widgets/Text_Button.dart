@@ -10,9 +10,7 @@ class CustomTextButton extends StatelessWidget {
 
   final Color bgcolor;
   final String text;
-
   final Color textcolor;
-
   final BorderRadius? border_Radius;
 
   @override
