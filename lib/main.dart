@@ -1,4 +1,3 @@
-import 'package:booklyapp/Features/Home/presentation/views/Home.dart';
 import 'package:booklyapp/Features/splach/presentation/views/splash_screen.dart';
 import 'package:booklyapp/constant.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,7 @@ class Bookly extends StatelessWidget {
           ThemeData.dark().textTheme,
         )
       ),
-      home: const Home(),
+      home: const SplashScreen(),
     );
   }
 
