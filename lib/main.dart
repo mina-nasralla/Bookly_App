@@ -1,7 +1,9 @@
+import 'package:booklyapp/Core/bloc_observer.dart';
 import 'package:booklyapp/Core/utilites/Service_locator/service.dart';
 import 'package:booklyapp/Features/Home/data/Repos/Home%20_Repo_Impl.dart';
 import 'package:booklyapp/Features/Home/presentation/Manger/Featured_books_cubit/featured_books_cubit.dart';
 import 'package:booklyapp/Features/Home/presentation/Manger/Newset_Books_Cubit/newset_books_cubit.dart';
+import 'package:booklyapp/Features/Home/presentation/views/Home.dart';
 import 'package:booklyapp/Features/splach/presentation/views/splash_screen.dart';
 import 'package:booklyapp/constant.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,8 @@ import 'package:google_fonts/google_fonts.dart';
 void main() {
   setupGititLocaator();
   runApp(const Bookly());
+  Bloc.observer = SimpleBlocObserver();
+
 }
 
 class Bookly extends StatelessWidget {
@@ -22,9 +26,10 @@ class Bookly extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoEmpl>())),
+            create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoEmpl>())..fetchFeaturedBooks(),
+        ),
         BlocProvider(
-            create: (context) => NewsetBooksCubit(getIt.get<HomeRepoEmpl>()))
+            create: (context) => NewsetBooksCubit(getIt.get<HomeRepoEmpl>())..fetchNewsetBooks(),)
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -34,7 +39,7 @@ class Bookly extends StatelessWidget {
             textTheme: GoogleFonts.montserratTextTheme(
               ThemeData.dark().textTheme,
             )),
-        home: const SplashScreen(),
+        home: const Home(),
       ),
     );
   }
