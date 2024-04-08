@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
 
 class Featuredbooksitem extends StatelessWidget {
   const Featuredbooksitem({
-    super.key,
+    super.key, required this.imgurl,
   });
+  final String imgurl;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,9 @@ class Featuredbooksitem extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.greenAccent,
-                image: const DecorationImage(
-                  image: AssetImage(
-                    'assets/images/1.jpg',
+                image: DecorationImage(
+                  image: NetworkImage(
+                    imgurl,
                   ),
                   fit: BoxFit.fill,
                 ),
