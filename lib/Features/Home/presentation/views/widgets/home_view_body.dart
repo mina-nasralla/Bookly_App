@@ -1,10 +1,9 @@
 import 'package:booklyapp/Core/utilites/App_Styles/style.dart';
 import 'package:booklyapp/Features/Home/presentation/views/widgets/BestSellersListView.dart';
 import 'package:booklyapp/Features/Home/presentation/views/widgets/Featured_Books_List.dart';
-import 'package:booklyapp/Features/Search/presentation/Search_view.dart';
+import 'package:booklyapp/Features/Search/presentation/views/Search_View.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -29,20 +28,21 @@ class HomeViewBody extends StatelessWidget {
                         children: [
                           const Text(
                             'BooKly',
-                            style: TextStyle(fontSize: 30),
+                            style: TextStyle(fontSize: 30,fontWeight: FontWeight.w900),
                           ),
-                          // Animated logo
+                          // AnimatedTitle(),
+                          // WaveAnimation(),
                           IconButton(
                               onPressed: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const SearchScreen()));
+                                        builder: (context) =>const Search()));
                               },
                               icon: const Icon(
                                 Icons.search,
                                 size: 35,
-                              ))
+                              )),
                         ],
                       ),
                     ),
@@ -71,52 +71,6 @@ class HomeViewBody extends StatelessWidget {
               )
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-            child: GlassContainer(
-              borderRadius: BorderRadius.circular(40),
-              border: BorderSide.strokeAlignCenter,
-              blur: 10,
-              height: 60,
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          CupertinoIcons.book_solid,
-                          size: 30,
-                        )),
-                    const SizedBox(width: 40,),
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          CupertinoIcons.bookmark_fill,
-                          size: 30,
-                        )),
-                    const SizedBox(width: 40,),
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          CupertinoIcons.music_albums_fill,
-                          size: 30,
-                        )),
-                    const SizedBox(width: 40,),
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.grey[200],
-                      ), child: const CircleAvatar(
-                        backgroundImage:
-                             AssetImage('assets/images/1.jpg'),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          )
         ],
       ),
     );

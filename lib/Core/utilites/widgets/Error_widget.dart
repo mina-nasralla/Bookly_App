@@ -6,6 +6,6 @@ class CustomErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(Errormssg,style: const TextStyle(fontSize: 25,color: Colors.red),);
+    return SizedBox(child: Center(child: Text(Errormssg,style: const TextStyle(fontSize: 25,color: Colors.red),)));
   }
 }

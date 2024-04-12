@@ -19,8 +19,9 @@ class FeaturedBooksList extends StatelessWidget {
               itemCount: state.Books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Featuredbooksitem(
+                  bookModel: state.Books[index],
                       imgurl:
-                          state.Books[index].volumeInfo!.imageLinks!.thumbnail!,
+                          state.Books[index].volumeInfo.imageLinks?.thumbnail??'',
                     )),
           );
         } else if (state is ErrorFeaturedBooks) {

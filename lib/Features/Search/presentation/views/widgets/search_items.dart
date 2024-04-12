@@ -3,9 +3,9 @@ import 'package:booklyapp/Features/Home/presentation/views/widgets/Book_Detailes
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerListViewItems extends StatelessWidget {
-  BestSellerListViewItems(
-      {super.key, required this.bookModel, required this.imgurl});
+class Search_List_View_Items extends StatelessWidget {
+  Search_List_View_Items(
+      {super.key, required this.imgurl, required this.bookModel});
 
   BookModel bookModel;
   final String imgurl;
@@ -25,13 +25,16 @@ class BestSellerListViewItems extends StatelessWidget {
         height: 130,
         child: Row(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(14),
-              child: AspectRatio(
-                aspectRatio: 2.6 / 4,
+            AspectRatio(
+              aspectRatio: 2.6 / 4,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.greenAccent,
+                  borderRadius: BorderRadius.circular(14),
+                ),
                 child: CachedNetworkImage(
                   imageUrl: imgurl,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                   errorWidget: (context, url, error) => Container(
                       decoration: const BoxDecoration(color: Color(0xa3ff0404)),
                       child: const Icon(Icons.error)),
@@ -88,7 +91,7 @@ class BestSellerListViewItems extends StatelessWidget {
                         width: 6,
                       ),
                       Text(
-                        '${bookModel.volumeInfo.pageCount!.toString()} page',
+                        '${bookModel.volumeInfo.pageCount?.toString()} page',
                         style: const TextStyle(fontSize: 17),
                       ),
                     ],
