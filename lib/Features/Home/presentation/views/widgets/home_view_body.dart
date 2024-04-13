@@ -11,65 +11,59 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 25, horizontal: 8),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
-                            'BooKly',
-                            style: TextStyle(fontSize: 30,fontWeight: FontWeight.w900),
-                          ),
-                          // AnimatedTitle(),
-                          // WaveAnimation(),
-                          IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>const Search()));
-                              },
-                              icon: const Icon(
-                                Icons.search,
-                                size: 35,
-                              )),
-                        ],
+      child: CustomScrollView(
+        physics: BouncingScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 25, horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'BooKly',
+                        style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
                       ),
-                    ),
-                    const FeaturedBooksList(),
-                    const SizedBox(
-                      height: 35,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'Best Seller',
-                        style: Style.title,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                  ],
+                      // AnimatedTitle(),
+                      // WaveAnimation(),
+                      IconButton(
+                          onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const Search())),
+                          icon: const Icon(
+                            Icons.search,
+                            size: 35,
+                          )),
+                    ],
+                  ),
                 ),
-              ),
-              const SliverFillRemaining(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: BestSellersListView(),
+                const FeaturedBooksList(),
+                const SizedBox(
+                  height: 35,
                 ),
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    'Best Seller',
+                    style: Style.title,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+          ),
+          // Wrap BestSellersListView with SizedBox to limit height
+          SliverFillRemaining(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: BestSellersListView(),
+            ),
           ),
         ],
       ),

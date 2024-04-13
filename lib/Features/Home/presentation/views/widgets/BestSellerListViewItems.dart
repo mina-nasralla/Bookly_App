@@ -88,7 +88,7 @@ class BestSellerListViewItems extends StatelessWidget {
                         width: 6,
                       ),
                       Text(
-                        '${bookModel.volumeInfo.pageCount!.toString()} page',
+                        '${bookModel.volumeInfo.pageCount?.toString()} page',
                         style: const TextStyle(fontSize: 17),
                       ),
                     ],

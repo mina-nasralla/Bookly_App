@@ -55,7 +55,7 @@ final BookModel bookModel;
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.sizeOf(context).width * .25),
                   child:Featuredbooksitem(
-                    imgurl: bookModel.volumeInfo.imageLinks!.thumbnail, bookModel: bookModel,
+                    imgurl: bookModel.volumeInfo.imageLinks?.thumbnail, bookModel: bookModel,
                   )),
               const SizedBox(
                 height: 30,
@@ -76,7 +76,7 @@ final BookModel bookModel;
                   const SizedBox(width: 6),
                   const Text('Number of pages:', style: TextStyle(fontSize: 25,color: Colors.white)),
                   const SizedBox(width: 8),
-                  Text(bookModel.volumeInfo.pageCount!.toString(),
+                  Text(bookModel.volumeInfo.pageCount.toString(),
                       style: const TextStyle(fontSize: 17, color: Colors.grey)),
                 ],
               ),

@@ -48,11 +48,20 @@ dependencies:
   cached_network_image: ^3.3.1
   url_launcher: ^6.2.5
   conditional_builder_null_safety: ^0.0.6
+  flutter_launcher_icons: ^0.13.1
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/ic_launcher.png"
+  adaptive_icon_foreground: "assets/images/ic_launcher.png"
+  adaptive_icon_background: "assets/images/ic_launcher.png"
+  background_color: "#100B20"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -77,6 +86,9 @@ flutter:
     - assets/animations/splash.json
     - assets/animations/splash2.json
     - assets/images/1.jpg
+    - assets/images/LOGO.png
+    - assets/images/books.png
+    - assets/images/ic_launcher.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

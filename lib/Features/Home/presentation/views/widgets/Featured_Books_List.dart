@@ -15,14 +15,14 @@ class FeaturedBooksList extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .25,
             child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              itemCount: state.Books.length,
+                physics: const BouncingScrollPhysics(),
+                itemCount: state.Books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Featuredbooksitem(
-                  bookModel: state.Books[index],
-                      imgurl:
-                          state.Books[index].volumeInfo.imageLinks?.thumbnail??'',
-                    )),
+                    bookModel: state.Books[index],
+                    imgurl:
+                        state.Books[index].volumeInfo.imageLinks?.thumbnail ??
+                            '')),
           );
         } else if (state is ErrorFeaturedBooks) {
           return CustomErrorWidget(Errormssg: state.Error);

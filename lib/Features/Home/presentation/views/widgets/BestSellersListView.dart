@@ -15,10 +15,12 @@ class BestSellersListView extends StatelessWidget {
       builder: (context, state) {
         if (state is SuccessNewsetBooks) {
           return ListView.builder(
+            scrollDirection: Axis.vertical,
+
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,
             itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
               child: BestSellerListViewItems(
                 bookModel: state.Books[index],
                 imgurl:

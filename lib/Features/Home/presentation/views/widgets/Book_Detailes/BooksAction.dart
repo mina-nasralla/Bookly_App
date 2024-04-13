@@ -15,17 +15,17 @@ class BooksAction extends StatelessWidget {
       child: Row(
         children: [
           ConditionalBuilder(
-            condition: bookModel.accessInfo!.epub!.acsTokenLink == null,
+            condition: bookModel.accessInfo!.epub?.acsTokenLink == null,
           builder : (BuildContext context)=>const Expanded(
                 child: CustomTextButton(
                   bgcolor: Colors.white38,
-                  border_Radius: BorderRadius.only(topLeft: Radius.circular(16),bottomLeft: Radius.circular(16)),
-                  textcolor: Colors.white, text: 'Can\'t download',
+                  border_Radius: BorderRadius.only(topLeft: Radius.circular(14),bottomLeft: Radius.circular(16)),
+                  textcolor: Colors.white, text: 'No download',
                 )),
           fallback  : (BuildContext context)=>Expanded(
                 child: CustomTextButton(
                   bgcolor: Colors.white,
-                  border_Radius: const BorderRadius.only(topLeft: Radius.circular(16),bottomLeft: Radius.circular(16)),
+                  border_Radius: const BorderRadius.only(topLeft: Radius.circular(14),bottomLeft: Radius.circular(16)),
                   textcolor: Colors.black, text: 'Free download',
                   on_Pressed: ()async{
                     Uri uri = Uri.parse(bookModel.accessInfo!.epub!.acsTokenLink!);
@@ -46,14 +46,14 @@ class BooksAction extends StatelessWidget {
                     }
                   },
                   bgcolor: const Color(0xffEF8262),
-                  border_Radius: const BorderRadius.only(topRight: Radius.circular(16),bottomRight: Radius.circular(16)),
+                  border_Radius: const BorderRadius.only(topRight: Radius.circular(15),bottomRight: Radius.circular(16)),
                   textcolor: Colors.white, text: 'Preview',
                 )),
             builder: (BuildContext context)=>const Expanded(
                 child:  CustomTextButton(
                   bgcolor:  Colors.white38,
-                  border_Radius: BorderRadius.only(topRight: Radius.circular(16),bottomRight: Radius.circular(16)),
-                  textcolor: Colors.black, text: 'Can\'t Preview',
+                  border_Radius: BorderRadius.only(topRight: Radius.circular(13),bottomRight: Radius.circular(16)),
+                  textcolor: Colors.black, text: 'No Preview',
                 )),
            ),
         ],
